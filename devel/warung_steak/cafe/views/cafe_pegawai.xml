@@ -60,6 +60,9 @@
             <field name="model">cafe.pegawai</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="action_order_line" string="Add Qty +1" type="object" />
+                    </header>
                     <sheet>
                         <field name="image" widget="image" class="oe_avatar"/>
                         <div class="oe_title">

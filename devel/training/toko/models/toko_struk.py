@@ -10,6 +10,11 @@ class TokoStruk(models.Model):
     price_total = fields.Float(compute='get_price_total', store=True, string='Price Total')
 
     pegawai_id = fields.Many2one(comodel_name='toko.pegawai', string='Kasir')
+    pegawai_name = fields.Char(string='Nama Pegawai', related='pegawai_id.name')
+    pegawai_gender = fields.Selection([
+        ('l', 'Laki-laki'),
+        ('p', 'Perempuan'),
+    ], string='Gender', related='pegawai_id.gender')
 
     line_ids = fields.One2many(
         comodel_name='toko.struk.line',

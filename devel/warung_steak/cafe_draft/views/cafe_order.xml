@@ -6,14 +6,31 @@
             <field name="model">cafe.order</field>
             <field name="inherit_id" ref="cafe.cafe_order_form"/>
             <field name="arch" type="xml">
+            
+                <field name="pegawai_id" position="after">
+                    <field name="table_number" />
+                </field>
+                
                 <xpath expr="//field[@name='date_order']" position="before">
                     <field name="note" />
                 </xpath>
+
                 <xpath expr="//field[@name='state']" position="before">
                     <button name="set_open"
                         string="Set Open"
                         type="object"
+                        attrs="{'invisible':[('state', '=', 'open')]}"
                     />
+                    <button name="set_lunas" string="Lunas!" type="object"
+                        attrs="{'invisible':[('note', '=', 'lunas')]}"/>
+
+                    <button name="set_gratis" string="Gratis!" type="object"/>
+
+                    <button name="set_open_one" string="Set Open One" type="object" 
+                        attrs="{'invisible':[('state', '=', 'open')]}"/>
+
+                    <button name="add_order_line" string="Add Line!" type="object"/>
+                    <button name="delete_order_line" string="Delete Line!" type="object"/>
                 </xpath>
             </field>
         </record>

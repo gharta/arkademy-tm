@@ -6,6 +6,13 @@
             <field name="model">set.open.wizard</field>
             <field name="arch" type="xml">
                 <form>
+                    <group>
+                        <group>
+                            <field name='state' required="1"/>
+                            <field name='pegawai_id' required="1"/>
+                            <field name='notes'/>
+                        </group>
+                    </group>
                     <footer>
                         <button name="process_wizard"
                             string="Process"

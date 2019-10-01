@@ -36,6 +36,7 @@
                             <group>
                                 <field name="name"/>
                                 <field name="pegawai_id" options="{'no_open': True, 'no_create': True}"/>
+                                <field name="pegawai_name"/>
                             </group>
                             <group>
                                 <field name="price_total"/>

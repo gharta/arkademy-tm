@@ -26,9 +26,13 @@ class CafeOrder(models.Model):
     amount_total = fields.Float(compute='_compute_total', string='Total', store=True)
     
     @api.multi
-    @api.depends('line_ids')
+    @api.depends('line_ids', 'line_ids.quantity', 'line_ids.price')
     def _compute_total(self):
         for order_doc in self:
             amount_total = sum(order_doc.line_ids.mapped('price_total'))
             order_doc.amount_total = amount_total
     
+    # ORM create, write, unlink
+    def write(self, values):
+        res = super(CafeOrder, self).write(values)
+        return res

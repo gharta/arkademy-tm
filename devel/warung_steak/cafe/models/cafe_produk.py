@@ -15,4 +15,3 @@ class CafeProduk(models.Model):
     _sql_constraints = [
         ('kode_uniq', 'unique(kode)', 'Nomor Kode harus unik !')
     ]
-    
