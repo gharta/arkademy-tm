@@ -11,5 +11,25 @@
                 </xpath>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="cafe_pegawai_form">
+            <field name="name">cafe.pegawai.form</field>
+            <field name="model">cafe.pegawai</field>
+            <field name="inherit_id" ref="cafe.cafe_pegawai_form"/>
+            <field name="arch" type="xml">
+                <field name="image" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_order"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-anchor">Orders
+                        </button>
+                    </div>
+                </field>
+            </field>
+        </record>
+
     </data>
 </odoo>
+
+        
