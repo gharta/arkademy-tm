@@ -36,10 +36,10 @@ class PayOrderWizard(models.TransientModel):
                 move._action_done()
                 # Journal Cash
                 journal_cash = self.env['account.journal'].search([('type', '=', 'cash')], limit=1)
-                
+
                 # Pembuatan Jurnal Pembayaran
                 line_vals = []
-                
+
                 # Barang Keluar Belum Diinvoice
                 account_barang_keluar = line.product_id.categ_id.property_stock_account_output_categ_id
                 line_vals += [(0, 0, {
