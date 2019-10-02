@@ -9,6 +9,8 @@
     'views/menu_item.xml',
     'wizard/catalog_wizard.xml',
     'print/cafe_produk.xml',
+    'wizard/karyawan_wizard.xml',
+    'print/cafe_karyawan.xml',
   ],
   'sequence': 4,
   'auto_install': False,

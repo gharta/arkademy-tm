@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="karyawan_wizard" model="ir.ui.view">
+            <field name="name">karyawan.wizard</field>
+            <field name="model">karyawan.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <label for="gender"/>
+                    <field name="gender"/>
+                    <footer>
+                        <button name="process_wizard"
+                            string="Process"
+                            type="object"
+                            class="oe_highlight"
+                            />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

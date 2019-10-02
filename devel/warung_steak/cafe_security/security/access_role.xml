@@ -8,13 +8,13 @@
 
         <record model="res.groups" id="group_cafe_user">
             <field name="name">Pegawai</field>
-            <field name="category_id" ref="module_cafe"/>
+            <field name="category_id" ref="cafe_security.module_cafe"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record model="res.groups" id="group_cafe_manager">
             <field name="name">Manager</field>
-            <field name="category_id" ref="module_cafe"/>
+            <field name="category_id" ref="cafe_security.module_cafe"/>
             <field name="implied_ids" eval="[(4, ref('cafe_security.group_cafe_user'))]"/>
         </record>
     </data>

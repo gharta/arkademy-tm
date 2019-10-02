@@ -17,5 +17,21 @@
             action="catalog_wizard_action"
             sequence="40"
         />
+
+        <record model="ir.actions.act_window" id="karyawan_wizard_action">
+            <field name="name">Print Daftar Karyawan</field>
+            <field name="res_model">karyawan.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            id="karyawan_wizard_menu"
+            name="Daftar Karyawan"
+            parent="cafe.cafe_menu"
+            action="karyawan_wizard_action"
+            sequence="50"
+        />
     </data>
 </odoo>

@@ -6,18 +6,21 @@
             model="cafe.order"
             string="Cafe Order"
             name="cafe_print.cafe_order_template"
-            report_type="qweb-pdf"
+            report_type="qweb-html"
             print_report_name="'Cafe Order - %s' % (object.name)"
             paperformat="base.paperformat_us"/>
         />
         <template id="cafe_order_template">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="web.internal_layout">
+                    <t t-call="web.external_layout">
                         Nota : <span t-esc="doc.name"/>
                         Status : <span t-esc="doc.state"/>
+                        Karyawan : <span t-esc="doc.pegawai_id.name"/>
+                        Notes : <span t-esc="doc.note"/>
+                        Table Number : <span t-esc="doc.table_number"/>
                         <div>
-                            <t t-foreach="doc.line_ids" t-as="line">
+                            <t t-foreach="doc.line_ids" t-as="line"> 
                                 <span t-esc="line.produk_id"/>
                                 <span t-esc="line.produk_id.name"/>
                                 <span t-esc="line.quantity"/>
